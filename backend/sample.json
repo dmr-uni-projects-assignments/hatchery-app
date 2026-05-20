@@ -1,0 +1,73 @@
+{
+  "id": "internet-basics",
+  "title": "How to Use Internet",
+  "description": "Learn the fundamentals of internet usage.",
+  "thumbnail": "assets/internet/thumb.png",
+
+  "materials": [
+    {
+      "type": "text",
+      "content": "The internet is a global network connecting millions of computers."
+    },
+
+    {
+      "type": "image",
+      "src": "assets/internet/network-diagram.png",
+      "caption": "Example of a network diagram"
+    },
+
+    {
+      "type": "video",
+      "src": "assets/internet/intro.mp4",
+      "caption": "Introduction video"
+    }
+  ],
+
+  "questions": [
+    {
+      "id": 0,
+
+      "question": "What does the internet connect?",
+
+      "choices": [
+        {
+          "text": "Only phones",
+          "correct": false,
+          "comment": "The internet connects much more than phones."
+        },
+
+        {
+          "text": "Computers worldwide",
+          "correct": true,
+          "comment": "Correct! The internet is a global computer network."
+        },
+
+        {
+          "text": "Only websites",
+          "correct": false,
+          "comment": "Websites are only one service on the internet."
+        }
+      ]
+    },
+
+    {
+      "id": 1,
+
+      "question": "Which device can access the internet?",
+
+      "choices": [
+        {
+          "text": "Laptop",
+          "correct": true,
+          "comment": "Correct! Laptops can connect to the internet."
+        },
+
+        {
+          "text": "Stone",
+          "correct": false,
+          "comment": "A stone cannot access the internet."
+        }
+      ]
+    }
+  ]
+}

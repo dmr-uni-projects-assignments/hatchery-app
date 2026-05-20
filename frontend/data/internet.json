@@ -1,0 +1,247 @@
+{
+  "id": "internet-basics",
+  "title": "How to Use Internet",
+  "description": "Learn the fundamentals of internet usage.",
+  "thumbnail": "assets/internet/thumb.png",
+
+  "materials": [
+    {
+      "type": "text",
+      "content": "The internet is a global network connecting millions of computers and devices."
+    },
+
+    {
+      "type": "image",
+      "src": "assets/internet/network-diagram.png",
+      "caption": "Example of a network diagram"
+    },
+
+    {
+      "type": "video",
+      "src": "assets/internet/intro.mp4",
+      "caption": "Introduction video"
+    }
+  ],
+
+  "questions": [
+    {
+      "id": 0,
+      "question": "What does the internet connect?",
+      "choices": [
+        {
+          "text": "Only phones",
+          "correct": false,
+          "comment": "The internet connects much more than phones."
+        },
+        {
+          "text": "Computers and devices worldwide",
+          "correct": true,
+          "comment": "Correct! The internet connects devices around the world."
+        },
+        {
+          "text": "Only websites",
+          "correct": false,
+          "comment": "Websites are only one service on the internet."
+        }
+      ]
+    },
+
+    {
+      "id": 1,
+      "question": "Which device can access the internet?",
+      "choices": [
+        {
+          "text": "Laptop",
+          "correct": true,
+          "comment": "Correct! Laptops can connect to the internet."
+        },
+        {
+          "text": "Stone",
+          "correct": false,
+          "comment": "A stone cannot access the internet."
+        },
+        {
+          "text": "Smartphone",
+          "correct": true,
+          "comment": "Correct! Smartphones can access the internet."
+        }
+      ]
+    },
+
+    {
+      "id": 2,
+      "question": "What is a website?",
+      "choices": [
+        {
+          "text": "A collection of webpages",
+          "correct": true,
+          "comment": "Correct! Websites contain multiple webpages."
+        },
+        {
+          "text": "A physical computer",
+          "correct": false,
+          "comment": "A website is not hardware."
+        },
+        {
+          "text": "An internet cable",
+          "correct": false,
+          "comment": "Cables connect devices, not websites."
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "question": "Which program is commonly used to browse the internet?",
+      "choices": [
+        {
+          "text": "Web browser",
+          "correct": true,
+          "comment": "Correct! Browsers like Chrome or Firefox are used to access websites."
+        },
+        {
+          "text": "Calculator",
+          "correct": false,
+          "comment": "Calculators are not used for browsing."
+        },
+        {
+          "text": "Paint app",
+          "correct": false,
+          "comment": "Paint apps are for drawing."
+        }
+      ]
+    },
+
+    {
+      "id": 4,
+      "question": "What should you do before clicking an unknown link?",
+      "choices": [
+        {
+          "text": "Click immediately",
+          "correct": false,
+          "comment": "Unknown links may be unsafe."
+        },
+        {
+          "text": "Check if the link is trustworthy",
+          "correct": true,
+          "comment": "Correct! Always verify links before opening them."
+        },
+        {
+          "text": "Turn off your monitor",
+          "correct": false,
+          "comment": "That does not improve safety."
+        }
+      ]
+    },
+
+    {
+      "id": 5,
+      "question": "What is Wi-Fi used for?",
+      "choices": [
+        {
+          "text": "Cooking food",
+          "correct": false,
+          "comment": "Wi-Fi is unrelated to cooking."
+        },
+        {
+          "text": "Connecting devices wirelessly to the internet",
+          "correct": true,
+          "comment": "Correct! Wi-Fi allows wireless internet access."
+        },
+        {
+          "text": "Charging batteries",
+          "correct": false,
+          "comment": "Wi-Fi does not charge devices."
+        }
+      ]
+    },
+
+    {
+      "id": 6,
+      "question": "What is a search engine?",
+      "choices": [
+        {
+          "text": "A tool used to find information online",
+          "correct": true,
+          "comment": "Correct! Search engines help users find websites and information."
+        },
+        {
+          "text": "A car engine",
+          "correct": false,
+          "comment": "That is unrelated to the internet."
+        },
+        {
+          "text": "A type of monitor",
+          "correct": false,
+          "comment": "Monitors display images, not search results."
+        }
+      ]
+    },
+
+    {
+      "id": 7,
+      "question": "Why are passwords important?",
+      "choices": [
+        {
+          "text": "They protect accounts and personal information",
+          "correct": true,
+          "comment": "Correct! Strong passwords improve online security."
+        },
+        {
+          "text": "They make the internet faster",
+          "correct": false,
+          "comment": "Passwords do not affect internet speed."
+        },
+        {
+          "text": "They charge your device",
+          "correct": false,
+          "comment": "Passwords do not provide power."
+        }
+      ]
+    },
+
+    {
+      "id": 8,
+      "question": "What should you do if a website asks for sensitive information unexpectedly?",
+      "choices": [
+        {
+          "text": "Provide it immediately",
+          "correct": false,
+          "comment": "Never share sensitive information carelessly."
+        },
+        {
+          "text": "Verify the website first",
+          "correct": true,
+          "comment": "Correct! Always confirm the site's authenticity."
+        },
+        {
+          "text": "Ignore all websites forever",
+          "correct": false,
+          "comment": "You only need to be cautious, not avoid the internet entirely."
+        }
+      ]
+    },
+
+    {
+      "id": 9,
+      "question": "What is the main purpose of the internet?",
+      "choices": [
+        {
+          "text": "Connecting people and sharing information",
+          "correct": true,
+          "comment": "Correct! The internet enables communication and information sharing."
+        },
+        {
+          "text": "Only playing games",
+          "correct": false,
+          "comment": "Games are only one use of the internet."
+        },
+        {
+          "text": "Replacing electricity",
+          "correct": false,
+          "comment": "The internet depends on electricity."
+        }
+      ]
+    }
+  ]
+}

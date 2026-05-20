@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Learn</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#4f46e5" />
+
+    <!-- iOS support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- Fonts + Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-fullscreen">
+
+        <!-- HEADER -->
+        <header class="app-header-nav">
+
+            <button class="btn-back" onclick="history.back()">
+                <i class="ri-arrow-left-s-line"></i>
+            </button>
+
+            <div class="header-titles">
+                <h1 class="nav-title">Loading lesson...</h1>
+            </div>
+
+            <span class="step-counter" id="stepCounter">
+                Learn
+            </span>
+
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="content-area">
+
+            <!-- ========================= -->
+            <!-- MATERIAL VIEW -->
+            <!-- ========================= -->
+            <section class="lesson-section" id="materialView">
+
+                <div id="materialContent">
+
+                    <!-- Dynamic content injected here -->
+
+                </div>
+
+                <div class="action-group">
+
+                    <button class="btn btn-primary btn-block-ui"
+                            id="startQuizBtn">
+
+                        Start Quiz
+                        <i class="ri-arrow-right-line"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ========================= -->
+            <!-- QUIZ VIEW -->
+            <!-- ========================= -->
+            <section class="quiz-section"
+                     id="quizView"
+                     style="display:none;">
+
+                <!-- QUIZ META -->
+                <div class="quiz-meta">
+
+                    <span class="quiz-sub"
+                          id="questionCounter">
+
+                        Question 1 of 10
+
+                    </span>
+
+                    <div class="progress-container mini-progress">
+
+                        <div class="progress-bar-wrapper">
+
+                            <div class="progress-bar"
+                                 id="quizProgressBar"
+                                 style="width:0%;">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- QUESTION -->
+                <h2 class="quiz-prompt-title"
+                    id="questionText">
+
+                    Loading question...
+
+                </h2>
+
+                <!-- ANSWERS -->
+                <div class="quiz-options-stack"
+                     id="choicesContainer">
+
+                </div>
+
+                <!-- EXPLANATION -->
+                <div class="explanation-box animated-fade-in"
+                     id="explanationBox"
+                     style="display:none;">
+
+                    <div class="explain-header">
+
+                        <i class="ri-checkbox-circle-line"></i>
+
+                        <h3 id="explanationTitle">
+                            Correct!
+                        </h3>
+
+                    </div>
+
+                    <p class="explain-body"
+                       id="explanationText">
+
+                    </p>
+
+                </div>
+
+                <!-- NEXT BUTTON -->
+                <button class="btn btn-primary btn-block-ui"
+                        id="nextQuestionBtn"
+                        style="display:none;">
+
+                    Next Question
+
+                </button>
+
+            </section>
+
+        </main>
+
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav">
+
+            <a href="index.html" class="nav-item">
+                <i class="ri-home-5-line"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="#" class="nav-item active">
+                <i class="ri-book-open-line"></i>
+                <span>Learn</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="ri-user-6-line"></i>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+    </div>
+
+    <!-- GLOBAL SCRIPT -->
+    <script src="scripts/script.js"></script>
+
+    <!-- LESSON ENGINE -->
+    <script src="scripts/learn.js"></script>
+
+</body>
+
+</html>
