@@ -7,14 +7,31 @@ app.use(cors());
 app.use(express.json());
 
 /**
- * Simple in-memory memory store:
+ * Memory structure:
  * {
- *   sessionId: [{role, content}, ...]
+ *   sessionId: {
+ *      messages: [...],
+ *      lastActive: timestamp
+ *   }
  * }
  */
 const memory = {};
 
-// helper: limit memory so it doesn't grow forever
+// 1 hour expiry
+const SESSION_TTL = 60 * 60 * 1000;
+
+// cleanup function
+function cleanupSessions() {
+    const now = Date.now();
+
+    for (const sessionId in memory) {
+        if (now - memory[sessionId].lastActive > SESSION_TTL) {
+            delete memory[sessionId];
+        }
+    }
+}
+
+// helper: trim history
 function trimHistory(messages, max = 12) {
     if (messages.length <= max) return messages;
     return messages.slice(messages.length - max);
@@ -25,30 +42,39 @@ app.post("/api/chat", async (req, res) => {
         const { message, sessionId } = req.body;
 
         if (!sessionId) {
-            return res.status(400).json({
-                error: "sessionId is required"
-            });
+            return res.status(400).json({ error: "sessionId is required" });
         }
 
-        // create session if it doesn't exist
+        // 🧹 cleanup expired sessions every request
+        cleanupSessions();
+
+        // create session if needed
         if (!memory[sessionId]) {
-            memory[sessionId] = [
-                {
-                    role: "system",
-                    content:
-                        "You are a friendly digital literacy tutor. Keep answers simple and beginner-friendly."
-                }
-            ];
+            memory[sessionId] = {
+                messages: [
+                    {
+                        role: "system",
+                        content:
+                            "You are a friendly digital literacy tutor. Keep answers simple and beginner-friendly. Additionally, do not use markdown for your answers. Keep it notepad-friendly."
+                    }
+                ],
+                lastActive: Date.now()
+            };
         }
+
+        const session = memory[sessionId];
+
+        // update activity timestamp
+        session.lastActive = Date.now();
 
         // add user message
-        memory[sessionId].push({
+        session.messages.push({
             role: "user",
             content: message
         });
 
-        // trim old messages
-        memory[sessionId] = trimHistory(memory[sessionId]);
+        // trim memory
+        session.messages = trimHistory(session.messages);
 
         // call Ollama
         const ollamaResponse = await fetch(
@@ -60,24 +86,24 @@ app.post("/api/chat", async (req, res) => {
                 },
                 body: JSON.stringify({
                     model: "llama3.2:1b",
-                    messages: memory[sessionId],
+                    messages: session.messages,
                     stream: false
                 })
             }
         );
 
         const data = await ollamaResponse.json();
-
         const reply = data.message.content;
 
-        // store assistant reply in memory
-        memory[sessionId].push({
+        // store assistant reply
+        session.messages.push({
             role: "assistant",
             content: reply
         });
 
-        // trim again
-        memory[sessionId] = trimHistory(memory[sessionId]);
+        session.messages = trimHistory(session.messages);
+
+        session.lastActive = Date.now();
 
         res.json({
             reply,
