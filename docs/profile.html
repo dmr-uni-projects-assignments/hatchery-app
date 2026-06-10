@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Profile</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#4f46e5" />
+
+    <!-- Fonts + Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        .profile-header {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .avatar-large {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #EEF2FF;
+            color: var(--primary);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1.8rem;
+        }
+
+        .profile-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .profile-sub {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .profile-grid {
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-title {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .action-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            box-shadow: var(--shadow-sm);
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .action-btn {
+            padding: 12px;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .danger {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+
+        .primary {
+            background: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-fullscreen">
+
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="avatar">
+                <i class="ri-user-3-line"></i>
+            </div>
+            <h1 class="welcome-text">Profile</h1>
+        </header>
+
+        <!-- CONTENT -->
+        <main class="content-area">
+
+            <!-- PROFILE INFO -->
+            <div class="profile-header">
+                <div class="avatar-large">
+                    <i class="ri-user-3-line"></i>
+                </div>
+
+                <div>
+                    <div class="profile-name">TestUser</div>
+                    <div class="profile-sub">Digital Literacy Learner</div>
+                </div>
+            </div>
+
+            <!-- STATS -->
+            <div class="profile-grid">
+
+                <div class="stat-card">
+                    <div class="stat-title">Lessons Completed</div>
+                    <div class="stat-value">3</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-title">Quizzes Passed</div>
+                    <div class="stat-value">5</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-title">Chat Sessions</div>
+                    <div class="stat-value">12</div>
+                </div>
+
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="profile-grid">
+
+                <div class="action-card">
+
+                    <button class="action-btn primary">
+                        <i class="ri-settings-3-line"></i>
+                        Settings
+                    </button>
+
+                    <button class="action-btn danger" onclick="resetData()">
+                        <i class="ri-delete-bin-line"></i>
+                        Reset Progress
+                    </button>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="ri-home-5-line"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="chat.html" class="nav-item">
+                <i class="ri-chat-3-line"></i>
+                <span>Chat</span>
+            </a>
+
+            <a href="profile.html" class="nav-item active">
+                <i class="ri-user-6-line"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+
+    </div>
+
+    <script>
+        function resetData() {
+            const ok = confirm("Reset all progress?");
+
+            if (ok) {
+                alert("Progress cleared (demo only)");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

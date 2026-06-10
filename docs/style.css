@@ -227,7 +227,7 @@ video {
 }
 
 .card-locked {
-  opacity: 0.7;
+  opacity: 0.4;
 }
 
 .card-header {
@@ -249,38 +249,6 @@ video {
   line-height: 1.4;
 }
 
-/* ==========================================
-   BADGES
-   ========================================== */
-.badge {
-  padding: 4px 10px;
-
-  border-radius: var(--radius-sm);
-
-  font-size: 0.75rem;
-  font-weight: 600;
-
-  white-space: nowrap;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.badge-ongoing {
-  background-color: var(--bg-ongoing);
-  color: var(--color-ongoing);
-}
-
-.badge-new {
-  background-color: var(--bg-new);
-  color: var(--color-new);
-}
-
-.badge-locked {
-  background-color: var(--bg-locked);
-  color: var(--color-locked);
-}
 
 /* ==========================================
    PROGRESS
